@@ -20,7 +20,7 @@ const StagehandConfig: ConstructorParams = {
     undefined /* Session ID for resuming Browserbase sessions */,
   modelName: "gpt-4o-mini" /* Name of the model to use */,
   modelClientOptions: {
-    apiKey: process.env.OPENAI_API_KEY,
+    apiKey: process.env.GOOGLE_GENERATIVE_AI_API_KEY,
   } /* Configuration options for the model client */,
 };
 

@@ -12,6 +12,5 @@
     "allowImportingTsExtensions": false,
     "noEmit": false
   },
-  "include": ["*.ts", "api", "examples/run.ts", "external_clients/aisdk.ts"],
   "exclude": ["node_modules", "dist"]
 }
