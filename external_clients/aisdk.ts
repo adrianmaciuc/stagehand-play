@@ -16,7 +16,6 @@ import {
   LLMClient,
   AvailableModel,
 } from "@browserbasehq/stagehand";
-// import { LLMClient } from "../llm/LLMClient2.js";
 
 export class AISdkClient extends LLMClient {
   public type = "aisdk" as const;
