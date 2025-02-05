@@ -13,7 +13,7 @@ Stagehand is an SDK for automating browsers. It's built on top of [Playwright](h
 Get ready for a show-stopping development experience. Just run:
 
 ```bash
-npm install && npm start
+npm install && npx tsx tests/test1.ts
 ```
 
 ## What's Next?
