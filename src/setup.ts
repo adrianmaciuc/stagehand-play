@@ -18,5 +18,5 @@ export async function runSetup() {
   await stagehand.init();
   const page = stagehand.page;
   const context = stagehand.context;
-  return { page, context, stagehand };
+  return { page, stagehand, context };
 }
