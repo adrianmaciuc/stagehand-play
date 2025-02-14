@@ -8,7 +8,7 @@
   "dependencies": {
     "@ai-sdk/google": "^1.1.3",
     "@browserbasehq/sdk": "latest",
-    "@browserbasehq/stagehand": "latest",
+    "@browserbasehq/stagehand": "1.12",
     "@playwright/test": "^1.49.1",
     "ai": "^4.1.6",
     "boxen": "^8.0.1",

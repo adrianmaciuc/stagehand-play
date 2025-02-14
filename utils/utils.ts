@@ -22,7 +22,7 @@ export function printObserved(message: ObserveResult[], title?: string) {
   );
 }
 
-export function printExtracted(message: string, title?: string) {
+export function printExtracted(message: string | undefined, title?: string) {
   let msg = JSON.stringify(message);
   console.log(
     boxen(msg, {
