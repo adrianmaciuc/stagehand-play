@@ -21,25 +21,25 @@ export async function test1({
   await page.getByText("Add to Basket").nth(1).click();
   await page.getByRole("link", { name: "Basket" }).click();
 
-  const aiResponse = await page.extract({
+  const totalInEur = await page.extract({
     instruction:
-      "Extract the values of the items in the basket and return only total. Remove the pound sign",
+      "Extract total from the basket and convert it into euro based on the logic that 1.2 Euro is 1 pound",
     schema: z.object({
-      txt: z.string(),
+      x: z.string(),
     }),
   });
-  printExtracted(aiResponse.txt);
-  expect(aiResponse.txt).toBe("1.75");
+  printExtracted(totalInEur.x);
+  expect(totalInEur.x).toBe("2.10");
 
-  const aiResponseShipping = await page.extract({
+  const lowestAndShipping = await page.extract({
     instruction:
       "Extract only the item that is the lowest from the basket and add the value of that item the standard shipping fee, then return the total sum, only the number",
     schema: z.object({
-      txt: z.string(),
+      x: z.string(),
     }),
   });
-  printExtracted(aiResponseShipping.txt);
-  expect(aiResponseShipping.txt).toBe("2.74");
+  printExtracted(lowestAndShipping.x);
+  expect(lowestAndShipping.x).toBe("2.74");
 
   await stagehand.close();
 }
