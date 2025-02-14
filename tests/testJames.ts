@@ -20,16 +20,17 @@ export async function test1({
   await page.keyboard.press("Enter");
   await page.getByRole("checkbox").nth(1).check();
   try {
-    await expect(page.locator(".todo-count")).toContainText("1");
+    await expect(page.locator("footer")).toContainText("0");
   } catch {
-    const pageExtract = await page.extract({
-      instruction:
-        "Validate how many items are left. There should be 1 item left.",
+    console.log("Playwright failed to expect");
+    const aiResponse = await page.extract({
+      instruction: "how many items are left. return just the number",
       schema: z.object({
-        allText: z.string(),
+        txt: z.string(),
       }),
     });
-    printExtracted(pageExtract.allText);
+    printExtracted(aiResponse.txt);
+    expect(aiResponse.txt).toBe("0");
   }
 
   await stagehand.close();
